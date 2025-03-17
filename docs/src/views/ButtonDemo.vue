@@ -7,6 +7,7 @@
         <tao-button type="primary">主要按钮</tao-button>
       </div>
     </div>
+    <CodeBlock :code="buttonCode" />
   </template>
   
   <script setup>
