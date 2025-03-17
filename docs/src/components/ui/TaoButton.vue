@@ -11,18 +11,23 @@
   </script>
   
   <style scoped>
-  .tao-button {
+    .tao-button {
     padding: 8px 16px;
     border-radius: 4px;
-    border: 1px solid #dcdfe6;
+    border: 1px solid var(--border-color);
     background: #fff;
+    color: var(--text-color);
     cursor: pointer;
     transition: all 0.3s;
-  }
-  .tao-button.primary {
-    background: #409eff;
+    }
+    .tao-button.primary {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
     color: white;
-    border-color: #409eff;
-  }
-  .tao-button:hover { opacity: 0.8; }
+    }
+    .tao-button.success {
+    background: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+    }
   </style>

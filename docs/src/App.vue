@@ -1,24 +1,50 @@
+<script setup>
+import TopBar from "./components/TopBar.vue"
+import SideBar from './components/SideBar.vue';
+import { storeToRefs } from 'pinia';
+import { useUIStore } from './stores/index';
+
+const uiStore = useUIStore();
+const { isTopBarVisible, isSideBarVisible } = storeToRefs(uiStore);
+</script>
+
 <template>
-  <div class="app-container">
-    <!-- 侧边导航 -->
-    <aside class="sidebar">
-      <nav>
-        <router-link to="/">首页</router-link>
-        <router-link to="/button">Button 组件</router-link>
-      </nav>
-    </aside>
-    
-    <!-- 内容区域 -->
-    <main class="content">
-      <router-view />
-    </main>
+  <div id="app">
+    <TopBar />
+    <div class="main-container">
+      <SideBar v-if = "isSideBarVisible"/>
+      <div class="content-area">
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
+  
 </template>
 
 <style>
-.app-container { display: flex; min-height: 100vh; }
-.sidebar { width: 260px; background: #f8f9fa; border-right: 1px solid #e9ecef; padding: 24px; }
-.content { flex: 1; padding: 24px; max-width: 1200px; margin: 0 auto; }
-nav a { display: block; padding: 8px 12px; color: #333; text-decoration: none; }
-nav a.router-link-exact-active { color: #409eff; font-weight: 500; }
+#app{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.main-container {
+  display: flex;
+}
+
+.content-area {
+  flex-grow: 1;
+  padding: 20px;
+  margin-top: 60px; /* 与顶部栏高度一致 */
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .content-area {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
 </style>
