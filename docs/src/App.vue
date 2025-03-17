@@ -1,30 +1,24 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="app-container">
+    <!-- 侧边导航 -->
+    <aside class="sidebar">
+      <nav>
+        <router-link to="/">首页</router-link>
+        <router-link to="/button">Button 组件</router-link>
+      </nav>
+    </aside>
+    
+    <!-- 内容区域 -->
+    <main class="content">
+      <router-view />
+    </main>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<style>
+.app-container { display: flex; min-height: 100vh; }
+.sidebar { width: 260px; background: #f8f9fa; border-right: 1px solid #e9ecef; padding: 24px; }
+.content { flex: 1; padding: 24px; max-width: 1200px; margin: 0 auto; }
+nav a { display: block; padding: 8px 12px; color: #333; text-decoration: none; }
+nav a.router-link-exact-active { color: #409eff; font-weight: 500; }
 </style>
