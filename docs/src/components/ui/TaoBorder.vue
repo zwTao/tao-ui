@@ -1,5 +1,5 @@
 <template>
-    <div :class="['tao-border', customClass]" :style="borderStyle">
+    <div :class="['tao-border']" :style="borderStyle">
         <slot></slot>
     </div>
 </template>
@@ -33,9 +33,6 @@ export default {
                 borderStyle: this.borderType,
                 borderRadius: `${this.radius}px`
             };
-        },
-        customClass() {
-            return `tao-border--${this.style}`;
         }
     }
 }
@@ -45,13 +42,5 @@ export default {
 .tao-border{
     padding: 8px;
     display: inline-block;
-}
-
-.tao-border--dashed {
-  border-style: dashed;
-}
-
-.tao-border--dotted {
-  border-style: dotted;
 }
 </style>

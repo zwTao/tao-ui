@@ -1,6 +1,7 @@
 import TaoButton from './components/ui/TaoButton.vue'
+import TaoBorder from './components/ui/TaoBorder.vue'
 
-const components = [TaoButton]
+const components = [TaoButton , TaoBorder]
 
 const install = (app) => {
   components.forEach(component => {
@@ -8,5 +9,5 @@ const install = (app) => {
   })
 }
 
-export { TaoButton }
+export { TaoButton , TaoBorder }
 export default { install }
