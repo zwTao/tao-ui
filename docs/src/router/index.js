@@ -9,8 +9,11 @@ const routes = [
   { 
     path: '/components', 
     name: 'Components',
+    redirect: { name: 'Button' }, 
+    component: ()=>import('../views/Component.vue'),
     children: [
-        { path: 'button', name: 'Button', component: () => import('../views/ButtonDemo.vue') }
+        { path: 'button', name: 'Button', component: () => import('../views/ButtonDemo.vue') },
+        { path: 'border', name: 'Border', component: () => import('../views/BorderDemo.vue') }
     ]
   }
 ]

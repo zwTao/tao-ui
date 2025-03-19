@@ -2,7 +2,8 @@
   <aside v-if="isSideBarVisible" class="side-bar">
     <h2>组件列表</h2>
     <nav>
-      <router-link to="/components/button" class="nav-item">按钮页面</router-link>
+      <router-link to="/components/button" class="nav-item">按钮</router-link>
+      <router-link to="/components/border" class="nav-item">边框</router-link>
     </nav>
   </aside>
 </template>
